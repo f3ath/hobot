@@ -39,7 +39,12 @@ $app->get('/register/{name}/{password}', function (string $name, string $passwor
     }
     /** @var Hobot $bot */
     $bot = $app["bot.$name"];
-    $bot->setWebhook(true);
+    $bot->setWebhook([
+        'url' => $app->url('webhook', [
+            'name' => $name,
+            'token' => $bot_conf['web_token'],
+        ])
+    ]);
     return 'OK';
 })
     ->assert('name', $app['config']['bot_name_regex']);
