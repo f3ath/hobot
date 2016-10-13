@@ -5,8 +5,10 @@
  * @var $app \Hobot\App
  */
 
+use Hobot\Command\PhpManual;
 use Hobot\Hobot;
 use Hobot\UpdateProcessor\EchoMessage;
+use PHPCurl\CurlWrapper\Curl;
 
 foreach (['debug', 'env'] as $key) {
     $app[$key] = $app['config'][$key];
@@ -53,10 +55,15 @@ $app->get('/register/{name}/{password}', function (string $name, string $passwor
 
 $app['bot.test'] = function ($app) {
     $bot = new Hobot($app['config']['bots']['test']['api_token']);
+    $bot->addCommand($app['command.php']);
     $bot->setPostProcessor($app['processor.echo']);
     return $bot;
 };
 
 $app['processor.echo'] = function() {
     return new EchoMessage();
+};
+
+$app['command.php'] = function () {
+    return new PhpManual(new Curl());
 };

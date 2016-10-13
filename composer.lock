@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0c9ef2d3b7719cd23c51b3222512058a",
-    "content-hash": "8895abd46199526c8bbd048d1c622908",
+    "hash": "6adc91d81c91e3b78815fc7382794b01",
+    "content-hash": "484c56846f47d8f421d9815b32a34b70",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -455,6 +455,61 @@
                 "random"
             ],
             "time": "2016-03-18 20:34:03"
+        },
+        {
+            "name": "phpcurl/curlwrapper",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpcurl/curlwrapper.git",
+                "reference": "3db33f0e86d0eb8068a0baa3e56ec8419cb0c302"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpcurl/curlwrapper/zipball/3db33f0e86d0eb8068a0baa3e56ec8419cb0c302",
+                "reference": "3db33f0e86d0eb8068a0baa3e56ec8419cb0c302",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8 || ^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPCurl\\CurlWrapper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexey Karapetov",
+                    "email": "karapetov@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The simplest OOP wrapper for curl, curl_multi, curl_share functions. Use CURL as a dependency, not hard-coded!",
+            "keywords": [
+                "OOP",
+                "Phpcurl",
+                "curl",
+                "curl_multi",
+                "curl_share",
+                "dependency",
+                "injection",
+                "mock",
+                "phpunit",
+                "testable",
+                "testing",
+                "wrapper"
+            ],
+            "time": "2016-02-03 06:11:16"
         },
         {
             "name": "pimple/pimple",
