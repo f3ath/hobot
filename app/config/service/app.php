@@ -12,7 +12,11 @@ foreach (['debug', 'env'] as $key) {
     $app[$key] = $app['config'][$key];
 }
 
-$app->get('/webhook/{name}/{token}', function (string $name, string $token) use ($app) {
+$app->get('/', function () {
+    return 'Hello';
+});
+
+$app->post('/webhook/{name}/{token}', function (string $name, string $token) use ($app) {
     $bot_conf = $app['config']['bots'][$name] ?? null;
     $web_token = $bot_conf['web_token'] ?? null;
     if ($token === $web_token) {
