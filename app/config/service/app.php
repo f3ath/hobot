@@ -25,6 +25,7 @@ $app->post('/webhook/{name}/{token}', function (string $name, string $token) use
     /** @var Hobot $bot */
     $bot = $app["bot.$name"];
     $bot->commandsHandler(true);
+    return '';
 
 })
     ->assert('name', $app['config']['bot_name_regex'])
