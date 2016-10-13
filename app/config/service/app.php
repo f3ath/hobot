@@ -19,7 +19,7 @@ $app->get('/', function () {
 $app->post('/webhook/{name}/{token}', function (string $name, string $token) use ($app) {
     $bot_conf = $app['config']['bots'][$name] ?? null;
     $web_token = $bot_conf['web_token'] ?? null;
-    if ($token === $web_token) {
+    if ($token !== $web_token) {
         $app->abort(404, 'Bot not found');
     }
     /** @var Hobot $bot */
