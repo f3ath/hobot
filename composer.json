@@ -1,6 +1,6 @@
 {
-  "name": "f3ath/telegram-democracy-bot",
-  "description": "An attempt to create automated moderation system",
+  "name": "f3ath/hobot",
+  "description": "Telegram bot in PHP",
   "type": "project",
   "require": {
     "silex/silex": "^2.0",
