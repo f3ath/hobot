@@ -45,7 +45,7 @@ $app->get('/register/{name}/{password}', function (string $name, string $passwor
 
 
 $app['bot.test'] = function ($app) {
-    $bot = new Hobot($app['config']['bots']['test']['token']);
+    $bot = new Hobot($app['config']['bots']['test']['api_token']);
     $bot->setPostProcessor($app['processor.echo']);
 };
 
