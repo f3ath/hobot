@@ -34,7 +34,7 @@ class PhpManual extends Command
             CURLOPT_FOLLOWLOCATION => true,
         ]);
         $this->curl->exec();
-        $this->telegram->sendMessage([
+        $this->replyWithMessage([
             'text' => $this->curl->getInfo(CURLINFO_EFFECTIVE_URL),
         ]);
     }
